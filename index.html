@@ -28,12 +28,12 @@
 
 <body>
     <!--***** container *****-->
-    <div id="app" class="container">
+    <div id="app" class="container-sm">
 
         <div class="row pt-3">
 
             <!--***** left column *****-->
-            <div class="col-sm-5 bg-primary">
+            <div class="col-sm-5">
 
                 <!--***** container sofia *****-->
                 <div class="row sofia_container">
@@ -41,7 +41,7 @@
                         <div class="row py-2 align-items-center">
                             <div class="col-sm-6">
                                 <div class="sofia_wrapper d-inline-block">
-                                    <img class="avatar_sofia rounded-circle w-100" src="img/avatar_io.jpg" alt="sofia">
+                                    <img class="rounded-circle w-100" src="img/avatar_io.jpg" alt="sofia">
                                 </div>
                                 <span class="sofia_name">Sofia</span>
                             </div>
@@ -79,6 +79,29 @@
                     <div class="col-sm-12 py-2">
                         <input type="text" class="w-100 search_input rounded-3"
                             placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div v-for="person in contacts" class="col-sm-12 border_person">
+                        <div class="row py-3 align-items-center">
+                            <div class="col-sm-2">
+                                <div class="person_wrapper d-inline-block">
+                                    <img class="rounded-circle w-100" :src="profilePic(person.avatar)" alt="sofia">
+                                </div>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-10 person_name">{{person.name}}</div>
+                                            <div class="col-sm-2 text_person">12:00</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 text_person">Ultimo messaggio inviato</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

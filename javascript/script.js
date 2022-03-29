@@ -172,10 +172,12 @@ const app = new Vue({
 
     el: "#app",
     data: {
-
+        contacts,
     },
     methods: {
-
+        profilePic: function (person) {
+            return `img/avatar${person}.jpg`;
+        }
     },
 
 })
