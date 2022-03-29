@@ -13,6 +13,16 @@
     --background-beige: #f3eeea;
 }
 
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+}
+
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;

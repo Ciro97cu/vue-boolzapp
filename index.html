@@ -28,7 +28,7 @@
 
 <body>
     <!--***** container *****-->
-    <div id="app" class="container-sm mt-5 border border-primary">
+    <div id="app" class="container-sm border border-dark">
 
         <div class="row">
 
@@ -87,7 +87,7 @@
 
                 <!--***** container all person *****-->
                 <div class="row pb-5 container_person">
-                    <div v-for="person in contacts" class="col-sm-12 border_person">
+                    <div v-for="(person, index) in contacts" @click="changeChat(index)" class="col-sm-12 border_person">
                         <div class="row py-3 align-items-center">
                             <div class="col-sm-2">
                                 <div class="person_wrapper d-inline-block">
@@ -116,12 +116,13 @@
                 <div class="row py-2 align-items-center container_active_person">
                     <div class="col-sm-1">
                         <div class="sofia_wrapper d-inline-block">
-                            <img class="rounded-circle w-100" src="img/avatar_io.jpg" alt="sofia">
+                            <img class="rounded-circle w-100" :src="showActivePic(contacts[activePerson].avatar)"
+                                alt="pic">
                         </div>
                     </div>
                     <div class="col-sm-7">
                         <div class="row">
-                            <div class="col-sm-12">Michele</div>
+                            <div class="col-sm-12">{{contacts[activePerson].name}}</div>
                             <div class="col-sm-12">Ultimo accesso oggi alle 12:00</div>
                         </div>
                     </div>

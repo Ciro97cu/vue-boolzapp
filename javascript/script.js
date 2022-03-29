@@ -173,10 +173,17 @@ const app = new Vue({
     el: "#app",
     data: {
         contacts,
+        activePerson: 0,
     },
     methods: {
         profilePic: function (person) {
             return `img/avatar${person}.jpg`;
+        },
+        showActivePic: function (avatar) {
+            return `img/avatar${avatar}.jpg`;
+        },
+        changeChat: function (i) {
+            this.activePerson = i;
         }
     },
 
