@@ -1,17 +1,18 @@
-.row.mt-3 {
-    border: 1px solid black;
-}
-
 div.sofia_wrapper,
 div.person_wrapper {
     width: 50px;
 }
 
-.sofia_container {
+.col-sm-5 {
+    border-right: 1px solid var(--grey);
+}
+
+.sofia_container,
+.container_active_person {
     background-color: var(--background-grey);
 }
 
-.sofia_icons {
+i {
     color: var(--grey);
 }
 
@@ -62,6 +63,10 @@ input.search_input::placeholder {
     padding-left: 10px;
 }
 
+.container_person {
+    overflow-y: scroll;
+}
+
 .border_person {
     border-top: 1px solid var(--background-grey);
 }
@@ -73,4 +78,23 @@ input.search_input::placeholder {
 
 .person_name {
     font-weight: 600;
+}
+
+.height_input {
+    height: 40px;
+    padding-left: 10px;
+}
+
+.container_input_message i {
+    font-size: 20px;
+}
+
+.container_input_message {
+    background-color: var(--background-beige);
+}
+
+.row.h_100 {
+    background-image: url(/img/mine.jpg);
+    background-size: 50%;
+    overflow-y: scroll;
 }

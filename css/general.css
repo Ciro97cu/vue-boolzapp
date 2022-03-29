@@ -10,9 +10,14 @@
     --grey: #b1b1b1;
     --background-grey: #eaeaea;
     --background-notify: #8edafc;
+    --background-beige: #f3eeea;
 }
 
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
+}
+
+.h_100 {
+    height: calc(100% - 138px);
 }
