@@ -3,11 +3,15 @@ div.sofia_wrapper {
 }
 
 .sofia_container {
-    background-color: var(--background-sofia);
+    background-color: var(--background-grey);
 }
 
 .sofia_icons {
     color: var(--grey);
+}
+
+.sofia_name {
+    font-weight: 500;
 }
 
 .notify_container {
@@ -19,7 +23,7 @@ div.sofia_wrapper {
     width: 40px;
     height: 40px;
     line-height: 40px;
-    padding-left: 9px;
+    padding-left: 10px;
     border-radius: 50%;
 }
 
@@ -31,4 +35,23 @@ div.sofia_wrapper {
 .notify_top_text {
     font-size: 13px;
     font-weight: 700;
+}
+
+.input_search {
+    background-color: var(--background-grey);
+}
+
+input.search_input {
+    border: none;
+}
+
+input.search_input {
+    height: 30px;
+}
+
+input.search_input::placeholder {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--grey);
+    padding-left: 10px;
 }

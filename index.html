@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!--***** link favicon *****-->
     <link rel="shortcut icon" href="img/boolzapp.png" type="image/x-icon">
+    <!--***** link vue js *****-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Boolzapp</title>
 </head>
 
@@ -41,7 +43,7 @@
                                 <div class="sofia_wrapper d-inline-block">
                                     <img class="avatar_sofia rounded-circle w-100" src="img/avatar_io.jpg" alt="sofia">
                                 </div>
-                                <span>Sofia</span>
+                                <span class="sofia_name">Sofia</span>
                             </div>
                             <div class="col-sm-6">
                                 <div class="row justify-content-end">
@@ -58,16 +60,25 @@
                 <div class="row notify_container">
                     <div class="col-sm-12">
                         <div class="row py-2 align-items-center">
+                            <!-- bell icon -->
                             <div class="col-auto">
                                 <i class="fa-solid fa-bell-slash bg-white"></i>
                             </div>
-                            <div class="col-sm-9">
+                            <!-- text notify -->
+                            <div class="col-sm-10">
                                 <div class="row">
                                     <div class="col-sm-12 notify_top_text">Ricevi notifiche di nuovi messaggi</div>
                                     <div class="col-sm-12 notify_bottom_text"><u>Attiva notifiche Desktop</u></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="row input_search">
+                    <div class="col-sm-12 py-2">
+                        <input type="text" class="w-100 search_input rounded-3"
+                            placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
 
@@ -80,8 +91,7 @@
 
     </div>
 
-    <!--***** link vue js *****-->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <!--***** link script *****-->
     <script src="javascript/script.js"></script>
 </body>
