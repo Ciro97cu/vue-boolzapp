@@ -1,3 +1,7 @@
+.row.mt-3 {
+    border: 1px solid black;
+}
+
 div.sofia_wrapper,
 div.person_wrapper {
     width: 50px;
