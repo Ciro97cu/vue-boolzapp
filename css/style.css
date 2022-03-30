@@ -29,7 +29,6 @@ i {
     width: 40px;
     height: 40px;
     line-height: 40px;
-    padding-left: 10px;
     border-radius: 50%;
 }
 
@@ -76,7 +75,8 @@ input.search_input::placeholder {
     cursor: pointer;
 }
 
-.person_name {
+.person_name,
+.name_active_person {
     font-weight: 600;
 }
 
@@ -93,7 +93,7 @@ input.search_input::placeholder {
     background-color: var(--background-beige);
 }
 
-.row.h_100 {
+.container_message {
     background-image: url(/img/mine.jpg);
     background-size: 50%;
     overflow-y: scroll;

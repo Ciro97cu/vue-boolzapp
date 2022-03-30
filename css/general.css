@@ -11,6 +11,7 @@
     --background-grey: #eaeaea;
     --background-notify: #8edafc;
     --background-beige: #f3eeea;
+    --background-green: #d5f9ba;
 }
 
 body, html {
@@ -28,6 +29,24 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
-.h_100 {
+.height_vh {
+    height: 100vh;
+}
+
+.container_message {
     height: calc(100% - 138px);
+}
+
+.container_person {
+    height: calc(100% - 176px);
+}
+
+.sent {
+    border-radius: 10px;
+    background-color: var(--background-green);
+}
+
+.received {
+    border-radius: 10px;
+    background-color: white;
 }

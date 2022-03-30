@@ -28,12 +28,12 @@
 
 <body>
     <!--***** container *****-->
-    <div id="app" class="container-sm border border-dark">
+    <div id="app" class="container-sm">
 
         <div class="row">
 
             <!--***** left column *****-->
-            <div class="col-sm-5">
+            <div class="col-sm-5 height_vh">
 
                 <!--***** container sofia *****-->
                 <div class="row sofia_container">
@@ -62,7 +62,7 @@
                         <div class="row py-2 align-items-center">
                             <!-- bell icon -->
                             <div class="col-auto">
-                                <i class="fa-solid fa-bell-slash bg-white"></i>
+                                <i class="fa-solid fa-bell-slash bg-white text-center"></i>
                             </div>
                             <!-- text notify -->
                             <div class="col-sm-10">
@@ -86,7 +86,7 @@
                 </div>
 
                 <!--***** container all person *****-->
-                <div class="row pb-5 container_person">
+                <div class="row container_person">
                     <div v-for="(person, index) in contacts" @click="changeChat(index)" class="col-sm-12 border_person">
                         <div class="row py-3 align-items-center">
                             <div class="col-sm-2">
@@ -99,10 +99,11 @@
                                     <div class="col-sm-12">
                                         <div class="row">
                                             <div class="col-sm-10 person_name">{{person.name}}</div>
-                                            <div class="col-sm-2 text_person">12:00</div>
+                                            <div class="col-sm-2 text_person">
+                                                {{displayHourLastMessage(person.messages)}}</div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 text_person">Ultimo messaggio inviato</div>
+                                    <div class="col-sm-12 text_person">{{displayLastMessage(person.messages)}}</div>
                                 </div>
                             </div>
                         </div>
@@ -113,6 +114,7 @@
 
             <!--***** right column *****-->
             <div class="col-sm-7">
+                <!--***** container active person *****-->
                 <div class="row py-2 align-items-center container_active_person">
                     <div class="col-sm-1">
                         <div class="sofia_wrapper d-inline-block">
@@ -122,8 +124,10 @@
                     </div>
                     <div class="col-sm-7">
                         <div class="row">
-                            <div class="col-sm-12">{{contacts[activePerson].name}}</div>
-                            <div class="col-sm-12">Ultimo accesso oggi alle 12:00</div>
+                            <div class="col-sm-12 name_active_person">{{contacts[activePerson].name}}</div>
+                            <div class="col-sm-12">Ultimo accesso oggi alle
+                                {{displayHourLastMessage(contacts[activePerson].messages)}}
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -134,7 +138,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="row h_100"></div>
+
+                <!--***** container messages *****-->
+                <div class="row container_message">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-5 sent p-3 m-5">prova</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--***** container input message *****-->
                 <div class="row py-3 align-items-center container_input_message">
                     <div class="col-sm-1 text-center">
                         <i class="fa-regular fa-face-smile"></i>

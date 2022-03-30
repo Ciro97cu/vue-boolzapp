@@ -184,6 +184,12 @@ const app = new Vue({
         },
         changeChat: function (i) {
             this.activePerson = i;
+        },
+        displayLastMessage: function (personMessage) {
+            return personMessage[personMessage.length - 1].message;
+        },
+        displayHourLastMessage: function (personHour) {
+            return personHour[personHour.length - 1].date.slice(11, -3);
         }
     },
 
