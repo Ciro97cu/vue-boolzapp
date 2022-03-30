@@ -195,6 +195,7 @@ const app = new Vue({
     data: {
         contacts,
         activePerson: 0,
+        valueMessage: "",
     },
     methods: {
         profilePic: function (person) {
@@ -217,7 +218,24 @@ const app = new Vue({
         },
         skinMessage: function (messages) {
             return messages.status === "sent" ? "sent" : "received";
+        },
+        hourGenerator: function () {
+            const now = new Date();
+            const current = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+            return current;
+        },
+        addMessage: function (indexChat) {
+
+            indexChat.push(
+                {
+                    date: `10/01/2020 ${this.hourGenerator()}`,
+                    message: this.valueMessage,
+                    status: 'sent'
+                }
+            );
+            this.valueMessage = "";
         }
+
     },
 
 });

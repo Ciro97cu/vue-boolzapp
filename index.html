@@ -154,7 +154,9 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="col-sm-10">
-                        <input type="text" class="w-100 height_input" placeholder="Scrivi un messaggio">
+                        <input type="text" class="w-100 height_input" v-model="valueMessage"
+                            @keyup.enter="addMessage(contacts[activePerson].messages)"
+                            placeholder="Scrivi un messaggio">
                     </div>
                     <div class="col-sm-1 text-center">
                         <i class="fa-solid fa-microphone"></i>
