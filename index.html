@@ -26,9 +26,9 @@
     <title>Boolzapp</title>
 </head>
 
-<body>
+<body class="d-flex align-items-center bg-primary">
     <!--***** container *****-->
-    <div id="app" class="container-sm">
+    <div id="app" class="container-sm border border-2 border-dark">
 
         <div class="row">
 
@@ -86,7 +86,7 @@
                 </div>
 
                 <!--***** container all person *****-->
-                <div class="row container_person">
+                <div class="row container_person align-content-start bg-white">
                     <div v-for="(person, index) in contacts" @click="changeChat(index)" class="col-sm-12 border_person">
                         <div class="row py-3 align-items-center">
                             <div class="col-sm-2">

@@ -6,6 +6,7 @@
     font-family: "Montserrat", sans-serif;
 }
 
+/***** root *****/
 :root {
     --grey: #b1b1b1;
     --background-grey: #eaeaea;
@@ -14,25 +15,24 @@
     --background-green: #d5f9ba;
 }
 
+/***** body / html *****/
 body, html {
     width: 100%;
     height: 100%;
 }
 
-body {
-    display: flex;
-    align-items: center;
-}
-
+/***** reset margin padding *****/
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
 }
 
+/***** height all container *****/
 .height_vh {
-    height: 100vh;
+    height: 80vh;
 }
 
+/***** heights scroll parts *****/
 .container_message {
     height: calc(100% - 138px);
 }
@@ -41,6 +41,7 @@ h1, h2, h3, h4, h5, h6, p {
     height: calc(100% - 176px);
 }
 
+/***** css messages class *****/
 .sent {
     border-radius: 10px;
     background-color: var(--background-green);
