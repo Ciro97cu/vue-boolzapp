@@ -220,12 +220,23 @@ const app = new Vue({
             return messages.status === "sent" ? "sent" : "received";
         },
         hourGenerator: function () {
-            const now = new Date();
-            const current = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
-            return current;
+            let today = new Date();
+            let hh = String(today.getHours()).padStart(2, '0');
+            let mm = String(today.getMinutes()).padStart(2, '0');
+            let ss = String(today.getSeconds()).padStart(2, '0');
+            today = hh + ':' + mm + ':' + ss;
+            return today;
+        },
+        answerFunction: function () {
+            contacts[this.activePerson].messages.push(
+                {
+                    date: `10/01/2020 ${this.hourGenerator()}`,
+                    message: "Ok Let's Goooooo!!",
+                    status: 'received'
+                }
+            );
         },
         addMessage: function (indexChat) {
-
             indexChat.push(
                 {
                     date: `10/01/2020 ${this.hourGenerator()}`,
@@ -234,7 +245,8 @@ const app = new Vue({
                 }
             );
             this.valueMessage = "";
-        }
+            setTimeout(this.answerFunction, 1000);
+        },
 
     },
 
