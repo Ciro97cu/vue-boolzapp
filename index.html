@@ -144,7 +144,7 @@
                 <div class="row container_messages">
                     <div class="d-flex flex-column">
                         <div v-for="(message, index) in contacts[activePerson].messages" :class="skinMessage(message)"
-                            class="px-3 pt-3 pb-4 col-sm-5 mt-5 mx-4 container_message">
+                            class="px-3 pt-3 pb-4 col-sm-5 mt-5 mb-3 mx-4 container_message">
                             {{message.message}}
                             <span>{{displayHourMessage(contacts[activePerson].messages, index)}}</span>
                         </div>
