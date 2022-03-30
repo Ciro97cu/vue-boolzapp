@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /***** heights scroll parts *****/
-.container_message {
+.container_messages {
     height: calc(100% - 138px);
 }
 
@@ -45,6 +45,7 @@ h1, h2, h3, h4, h5, h6, p {
 .sent {
     border-radius: 10px;
     background-color: var(--background-green);
+    align-self: flex-end;
 }
 
 .received {

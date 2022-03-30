@@ -93,8 +93,20 @@ input.search_input::placeholder {
     background-color: var(--background-beige);
 }
 
-.container_message {
+.container_messages {
     background-image: url(/img/mine.jpg);
     background-size: 50%;
     overflow-y: scroll;
+}
+
+.container_message {
+    position: relative;
+}
+
+.container_message > span {
+    font-size: 12px;
+    position: absolute;
+    right: 3%;
+    bottom: 5%;
+    color: var(--grey);
 }

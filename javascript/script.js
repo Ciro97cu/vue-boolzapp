@@ -211,7 +211,13 @@ const app = new Vue({
         },
         displayHourLastMessage: function (personHour) {
             return personHour[personHour.length - 1].date.slice(11, -3);
+        },
+        displayHourMessage: function (personHour, i) {
+            return personHour[i].date.slice(11, -3);
+        },
+        skinMessage: function (messages) {
+            return messages.status === "sent" ? "sent" : "received";
         }
     },
 
-})
+});
