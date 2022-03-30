@@ -16,13 +16,20 @@
 }
 
 /***** body / html *****/
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
 }
 
 /***** reset margin padding *****/
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
     padding: 0;
 }
@@ -35,10 +42,12 @@ h1, h2, h3, h4, h5, h6, p {
 /***** heights scroll parts *****/
 .container_messages {
     height: calc(100% - 138px);
+    overflow-y: scroll;
 }
 
 .container_person {
     height: calc(100% - 176px);
+    overflow-y: scroll;
 }
 
 /***** css messages class *****/
