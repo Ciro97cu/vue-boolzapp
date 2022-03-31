@@ -102,11 +102,14 @@
                                     <div class="col-sm-12">
                                         <div class="row">
                                             <div class="col-sm-10 person_name">{{person.name}}</div>
-                                            <div class="col-sm-2 text_person">
-                                                {{displayHourLastMessage(person.messages)}}</div>
+                                            <div class="col-sm-2 text_person" v-if="person.messages.length > 0">
+                                                {{displayHourLastMessage(person.messages)}}
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 text_person">{{displayLastMessage(person.messages)}}</div>
+                                    <div class="col-sm-12 text_person" v-if="person.messages.length > 0">
+                                        {{displayLastMessage(person.messages)}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +131,8 @@
                     <div class="col-sm-7">
                         <div class="row">
                             <div class="col-sm-12 name_active_person">{{contacts[activePerson].name}}</div>
-                            <div class="col-sm-12">Ultimo accesso oggi alle
+                            <div class="col-sm-12" v-if="contacts[activePerson].messages.length > 0">Ultimo accesso oggi
+                                alle
                                 {{displayHourLastMessage(contacts[activePerson].messages)}}
                             </div>
                         </div>
@@ -147,7 +151,8 @@
                 <div class="row container_messages">
                     <div class="d-flex flex-column">
                         <div v-for="(message, index) in contacts[activePerson].messages" :class="message.status"
-                            class="px-3 pt-3 pb-4 col-sm-5 mt-5 mb-3 mx-4 container_message">
+                            class="px-3 pt-3 pb-4 col-sm-5 mt-5 mb-3 mx-4 container_message"
+                            v-if="contacts[activePerson].messages.length > 0">
                             {{message.message}}
                             <div>
                                 <i class="fa-solid fa-chevron-down" @click="displayDelete(message)"></i>
