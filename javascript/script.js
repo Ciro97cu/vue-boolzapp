@@ -267,8 +267,8 @@ const app = new Vue({
         },
         searchContact: function () {
             this.contacts.forEach(element => {
-                let names = element.name;
-                element.visible = names.includes(this.valueSearch);
+                let names = element.name.toLowerCase();
+                element.visible = names.includes(this.valueSearch.toLowerCase());
             });
         },
         displayDelete: function (i) {
