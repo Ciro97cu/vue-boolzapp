@@ -246,7 +246,8 @@ const app = new Vue({
                 {
                     date: `10/01/2020 ${this.hourGenerator()}`,
                     message: "Ok Let's Goooooo!!",
-                    status: 'received'
+                    status: 'received',
+                    displayInfo: false,
                 }
             );
         },
@@ -255,7 +256,8 @@ const app = new Vue({
                 {
                     date: `10/01/2020 ${this.hourGenerator()}`,
                     message: this.valueMessage,
-                    status: 'sent'
+                    status: 'sent',
+                    displayInfo: false,
                 }
             );
             this.valueMessage = "";
