@@ -252,16 +252,18 @@ const app = new Vue({
             );
         },
         addMessage: function (indexChat) {
-            indexChat.push(
-                {
-                    date: `10/01/2020 ${this.hourGenerator()}`,
-                    message: this.valueMessage,
-                    status: 'sent',
-                    displayInfo: false,
-                }
-            );
-            this.valueMessage = "";
-            setTimeout(this.answerFunction, 1000);
+            if (this.valueMessage.length > 0) {
+                indexChat.push(
+                    {
+                        date: `10/01/2020 ${this.hourGenerator()}`,
+                        message: this.valueMessage,
+                        status: 'sent',
+                        displayInfo: false,
+                    }
+                );
+                this.valueMessage = "";
+                setTimeout(this.answerFunction, 1000);
+            }
         },
         searchContact: function () {
             this.contacts.forEach(element => {
@@ -275,7 +277,5 @@ const app = new Vue({
         deleteMessage: function (i) {
             contacts[this.activePerson].messages.splice(i, 1);
         }
-
     },
-
 });
