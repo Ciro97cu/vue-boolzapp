@@ -198,12 +198,6 @@ const app = new Vue({
         valueMessage: "",
     },
     methods: {
-        profilePic: function (person) {
-            return `img/avatar${person}.jpg`;
-        },
-        showActivePic: function (avatar) {
-            return `img/avatar${avatar}.jpg`;
-        },
         changeChat: function (i) {
             this.activePerson = i;
         },
@@ -215,9 +209,6 @@ const app = new Vue({
         },
         displayHourMessage: function (personHour, i) {
             return personHour[i].date.slice(11, -3);
-        },
-        skinMessage: function (messages) {
-            return messages.status === "sent" ? "sent" : "received";
         },
         hourGenerator: function () {
             let today = new Date();
