@@ -196,6 +196,7 @@ const app = new Vue({
         contacts,
         activePerson: 0,
         valueMessage: "",
+        valueSearch: "",
     },
     methods: {
         changeChat: function (i) {
@@ -219,7 +220,7 @@ const app = new Vue({
             return today;
         },
         answerFunction: function () {
-            contacts[this.activePerson].messages.push(
+            this.contacts[this.activePerson].messages.push(
                 {
                     date: `10/01/2020 ${this.hourGenerator()}`,
                     message: "Ok Let's Goooooo!!",
@@ -238,6 +239,15 @@ const app = new Vue({
             this.valueMessage = "";
             setTimeout(this.answerFunction, 1000);
         },
+        searchContact: function () {
+            for (let i = 0; i < this.contacts.length; i++) {
+                if (this.contacts[i].name.includes(this.valueSearch)) {
+                    this.contacts[i].visible = true;
+                } else {
+                    this.contacts[i].visible = false;
+                }
+            }
+        }
 
     },
 

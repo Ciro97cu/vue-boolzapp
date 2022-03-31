@@ -50,7 +50,7 @@ p {
     overflow-y: scroll;
 }
 
-/***** css messages class *****/
+/***** css messages classes *****/
 .sent {
     border-radius: 10px;
     background-color: var(--background-green);
@@ -60,4 +60,13 @@ p {
 .received {
     border-radius: 10px;
     background-color: white;
+}
+
+/***** css display contact classes *****/
+.false {
+    display: none;
+}
+
+.true {
+    display: block;
 }

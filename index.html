@@ -81,13 +81,15 @@
                         <span class="input-group-text bg-white">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                            v-model="valueSearch" @input="searchContact()">
                     </div>
                 </div>
 
                 <!--***** container all person *****-->
                 <div class="row container_person align-content-start bg-white">
-                    <div v-for="(person, index) in contacts" @click="changeChat(index)" class="col-sm-12 border_person">
+                    <div v-for="(person, index) in contacts" @click="changeChat(index)"
+                        :class="person.visible === false ? 'false' : 'true' " class="col-sm-12 border_person">
                         <div class="row py-3 align-items-center">
                             <div class="col-sm-2">
                                 <div class="person_wrapper d-inline-block">
