@@ -107,19 +107,20 @@ input.search_input::placeholder {
 }
 
 .container_message .fa-chevron-down {
-    font-size: 20px;
+    font-size: 10px;
     position: absolute;
     right: 3%;
     top: 10%;
     color: var(--grey);
-    height: 25px;
-    width: 25px;
-    line-height: 25px;
+    height: 15px;
+    width: 15px;
+    line-height: 15px;
     text-align: center;
     border-radius: 50%;
 }
 
 .container_message .fa-chevron-down:hover {
+    display: block;
     background-color: rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
