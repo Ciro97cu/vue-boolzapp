@@ -270,8 +270,8 @@ const app = new Vue({
         displayDelete: function (i) {
             return !i.displayInfo ? i.displayInfo = true : i.displayInfo = false;
         },
-        deleteMessage: function (i, obj) {
-            contacts[obj].messages.splice(i, 1);
+        deleteMessage: function (i) {
+            contacts[this.activePerson].messages.splice(i, 1);
         }
 
     },
