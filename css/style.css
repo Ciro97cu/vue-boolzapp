@@ -105,3 +105,47 @@ input.search_input::placeholder {
     bottom: 5%;
     color: var(--grey);
 }
+
+.container_message .fa-chevron-down {
+    font-size: 20px;
+    position: absolute;
+    right: 3%;
+    top: 10%;
+    color: var(--grey);
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.container_message .fa-chevron-down:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.delete_message {
+    z-index: 1;
+    font-size: 12px;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    background-color: white;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.delete_message>p:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.delete_message>p:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.delete_message>p:last-child {
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+}

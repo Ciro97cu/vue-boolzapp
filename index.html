@@ -149,6 +149,14 @@
                         <div v-for="(message, index) in contacts[activePerson].messages" :class="message.status"
                             class="px-3 pt-3 pb-4 col-sm-5 mt-5 mb-3 mx-4 container_message">
                             {{message.message}}
+                            <div>
+                                <i class="fa-solid fa-chevron-down" @click="displayDelete(message)"></i>
+                                <div class="delete_message" :class="message.displayInfo ? 'd-block' : 'd-none'">
+                                    <p class="p-2">Info Messaggio</p>
+                                    <p class="p-2" @click="deleteMessage(message, index)">Elimina Messaggio</p>
+                                </div>
+                            </div>
+
                             <span>{{displayHourMessage(contacts[activePerson].messages, index)}}</span>
                         </div>
                     </div>
