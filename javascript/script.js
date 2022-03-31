@@ -215,24 +215,33 @@ const app = new Vue({
 
     el: "#app",
     data: {
+        // richiamo il mio array
         contacts,
+        // indice oggetti array contacts
         activePerson: 0,
+        // value input messaggio
         valueMessage: "",
+        // value input ricerca
         valueSearch: "",
     },
     methods: {
+        // funzione per mostrare a schermo la chat attiva tramite l'indice
         changeChat: function (i) {
             this.activePerson = i;
         },
+        // funzione per mostrare l'ultimo messaggio della chat
         displayLastMessage: function (personMessage) {
             return personMessage[personMessage.length - 1].message;
         },
+        // funzione per mostrare l'ora dell'ultimo accesso
         displayHourLastMessage: function (personHour) {
             return personHour[personHour.length - 1].date.slice(11, -3);
         },
+        // funzione per mostrare l'ora di arrivo dell'ultimo messaggio della chat
         displayHourMessage: function (personHour, i) {
             return personHour[i].date.slice(11, -3);
         },
+        // funzione per generare l'ora attuale con formato hh:mm:ss
         hourGenerator: function () {
             let today = new Date();
             let hh = String(today.getHours()).padStart(2, '0');
@@ -241,6 +250,7 @@ const app = new Vue({
             today = hh + ':' + mm + ':' + ss;
             return today;
         },
+        // funzione per creare una risposta automatica all'invio di un messaggio
         answerFunction: function () {
             this.contacts[this.activePerson].messages.push(
                 {
@@ -251,6 +261,9 @@ const app = new Vue({
                 }
             );
         },
+        /* funzione per aggiungere un messaggio tramite l'input
+        e allo stesso tempo tramite un setTimeout richiamare e far partire
+        la precedente funzione per la risposta */
         addMessage: function (indexChat) {
             if (this.valueMessage.length > 0) {
                 indexChat.push(
@@ -265,15 +278,18 @@ const app = new Vue({
                 setTimeout(this.answerFunction, 1000);
             }
         },
+        // funzione per ricercare tramite l'input una persona dai nostri contatti
         searchContact: function () {
             this.contacts.forEach(element => {
                 let names = element.name.toLowerCase();
                 element.visible = names.includes(this.valueSearch.toLowerCase());
             });
         },
+        // funzione per mostrare e nascondere il menu a tendina al click sulla chevron
         displayDelete: function (i) {
             return !i.displayInfo ? i.displayInfo = true : i.displayInfo = false;
         },
+        // funzione che mi elimina il messaggio selezionato tramite l'index e lo splice 
         deleteMessage: function (i) {
             contacts[this.activePerson].messages.splice(i, 1);
         }
