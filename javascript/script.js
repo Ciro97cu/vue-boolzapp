@@ -240,13 +240,10 @@ const app = new Vue({
             setTimeout(this.answerFunction, 1000);
         },
         searchContact: function () {
-            for (let i = 0; i < this.contacts.length; i++) {
-                if (this.contacts[i].name.includes(this.valueSearch)) {
-                    this.contacts[i].visible = true;
-                } else {
-                    this.contacts[i].visible = false;
-                }
-            }
+            this.contacts.forEach(element => {
+                let names = element.name;
+                element.visible = names.includes(this.valueSearch);
+            });
         }
 
     },

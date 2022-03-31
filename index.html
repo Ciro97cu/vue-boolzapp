@@ -88,8 +88,8 @@
 
                 <!--***** container all person *****-->
                 <div class="row container_person align-content-start bg-white">
-                    <div v-for="(person, index) in contacts" @click="changeChat(index)"
-                        :class="person.visible === false ? 'false' : 'true' " class="col-sm-12 border_person">
+                    <div v-for="(person, index) in contacts" @click="changeChat(index)" v-if="person.visible"
+                        class="col-sm-12 border_person">
                         <div class="row py-3 align-items-center">
                             <div class="col-sm-2">
                                 <div class="person_wrapper d-inline-block">
