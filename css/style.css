@@ -90,7 +90,7 @@ input.search_input::placeholder {
 }
 
 .container_messages {
-    background-image: url(/img/mine.jpg);
+    background-image: url(../img/mine.jpg);
     background-size: 50%;
 }
 
